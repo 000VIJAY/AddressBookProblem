@@ -4,3 +4,4 @@ PersonAddress GetPerson = new PersonAddress();
 GetPerson.Book();
 GetPerson.AddContact();
 GetPerson.EditContact();
+GetPerson.Remove();

@@ -128,5 +128,30 @@ namespace AddressBookProblem
                     break;
             }
         }
+        public void Remove()
+        {
+            Console.WriteLine("Wants to delete any contact if yes //Press-1, else write any number");
+            int num = Convert.ToInt32(Console.ReadLine());
+            switch (num)
+            {
+                case 1:
+                    Console.WriteLine("Enter First Name which contact wants to delete");
+                    string? i = Console.ReadLine();
+                    if (persons.ContainsKey(i))
+                    {
+                        persons.Remove(i);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact not found");
+                    }
+                    ForDisplay();
+                    break;
+                default:
+                    Console.WriteLine("Do not want to remove");
+                    break;
+
+            }
+        }
     }
 }
