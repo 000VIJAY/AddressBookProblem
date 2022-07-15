@@ -19,7 +19,6 @@ namespace AddressBookProblem
             persons.Add(PersonsTwoCon.FirstName, PersonsTwoCon);
             persons.Add(PersonsThreeCon.FirstName, PersonsThreeCon);
             persons.Add(PersonsFourCon.FirstName, PersonsFourCon);
-            ForDisplay();
         }
         public void ForDisplay()
         {
@@ -34,6 +33,42 @@ namespace AddressBookProblem
                 Console.WriteLine("Email: {0}", custContct.Email);
                 Console.WriteLine("-------------------------------------");
             }
+        }
+        public void AddContact()
+        {
+
+            Console.WriteLine("How many contacts wants to add , any case do not willing to add new contact press 0");
+            int newCon = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < newCon; i++)
+            {
+                Console.WriteLine("Enter Firstname");
+                string? FirstName = Console.ReadLine();
+                Console.WriteLine("Enter Last Name");
+                string? LastName = Console.ReadLine();
+                Console.WriteLine("Enter City");
+                string? City = Console.ReadLine();
+                Console.WriteLine("Enter State");
+                string? State = Console.ReadLine();
+                Console.WriteLine("Enter zip Number");
+                int Zip = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Phone Number");
+                long PhoneNumber = Convert.ToInt64(Console.ReadLine());
+                Console.WriteLine("Enter your email");
+                string? Email = Console.ReadLine();
+                Contact ContactPer = new Contact()
+                {
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    City = City,
+                    State = State,
+                    Zip = Zip,
+                    PhoneNumber = PhoneNumber,
+                    Email = Email,
+                };
+                persons.Add(ContactPer.FirstName, ContactPer);
+
+            }
+            ForDisplay();
         }
     }
 }
