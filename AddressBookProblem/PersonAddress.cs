@@ -36,11 +36,6 @@ namespace AddressBookProblem
         }
         public void AddContact()
         {
-
-            Console.WriteLine("How many contacts wants to add , any case do not willing to add new contact press 0");
-            int newCon = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < newCon; i++)
-            {
                 Console.WriteLine("Enter Firstname");
                 string? FirstName = Console.ReadLine();
                 Console.WriteLine("Enter Last Name");
@@ -66,8 +61,6 @@ namespace AddressBookProblem
                     Email = Email,
                 };
                 persons.Add(ContactPer.FirstName, ContactPer);
-
-            }
             ForDisplay();
         }
     }
