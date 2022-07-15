@@ -63,5 +63,70 @@ namespace AddressBookProblem
                 persons.Add(ContactPer.FirstName, ContactPer);
             ForDisplay();
         }
+        public void EditContact()
+        {
+            Console.WriteLine("If want to edit contact press 0 , else press any keyword ");
+            int editCon = Convert.ToInt32(Console.ReadLine());
+            switch (editCon)
+            {
+                case 0:
+                    //only edit the added contact
+                    Console.WriteLine("To edit contact list enter First Name");
+                    string name = Console.ReadLine().ToLower();
+
+                    Contact cust;
+                    if (persons.TryGetValue(name, out cust))
+                    {
+                        Console.WriteLine("enter the information wants to edit");
+                        Console.WriteLine("For edit First Name enter - 0");
+                        Console.WriteLine("For edit Last Name enter - 1");
+                        Console.WriteLine("For edit City  enter - 2");
+                        Console.WriteLine("For edit State  enter - 3");
+                        Console.WriteLine("For edit Zip  enter - 4");
+                        Console.WriteLine("For edit Phone  enter - 5");
+                        Console.WriteLine("For edit Email  enter - 6");
+                        int edit = Convert.ToInt32(Console.ReadLine());
+                        switch (edit)
+                        {
+                            case 0:
+                                Console.WriteLine("Enter the First Name");
+                                cust.FirstName = Console.ReadLine();
+                                break;
+                            case 1:
+                                Console.WriteLine("Enter the Last Name");
+                                cust.LastName = Console.ReadLine();
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter city Name");
+                                cust.City = Console.ReadLine();
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter State Name");
+                                cust.State = Console.ReadLine();
+                                break;
+                            case 4:
+                                Console.WriteLine("Enter Zip ");
+                                cust.Zip = Convert.ToDouble(Console.ReadLine());
+                                break;
+                            case 5:
+                                Console.WriteLine("Enter Phone Number");
+                                cust.PhoneNumber = Convert.ToDouble(Console.ReadLine());
+                                break;
+                            case 6:
+                                Console.WriteLine("Enter Email");
+                                cust.Email = Console.ReadLine();
+                                break;
+                            default:
+                                Console.WriteLine("Contact not exixt");
+                                break;
+                        }
+                    }
+                    ForDisplay();
+                    break;
+                default:
+                    Console.WriteLine("Do Not want to edit");
+                    break;
+            }
+        }
     }
 }
