@@ -5,8 +5,9 @@ bool check = true;
 while (check)
 {
         Console.WriteLine("Enter -0 ,For stop execution");
-        Console.WriteLine("Enter-1,For Add the information /n");
+        Console.WriteLine("Enter-1,For Add the contact");
         Console.WriteLine("Enter -2,For Edit information");
+    Console.WriteLine("Enter-3, For delete contact");
     int num = Convert.ToInt32(Console.ReadLine());
     switch (num)
     {
@@ -18,9 +19,12 @@ while (check)
             GetPerson.Book();
             break;
         case 2:
+            GetPerson.EditContact();
+         break;
+        case 3:
+            Console.WriteLine("Enter First name for Delete the contact");
             string name = Console.ReadLine();
-            GetPerson.EditContact()
-        ; break;
+            GetPerson.DeletingContactINAddressBook(name); break;
     }
 }
 

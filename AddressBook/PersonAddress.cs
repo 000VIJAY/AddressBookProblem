@@ -107,8 +107,21 @@ namespace AddressBook
             }
                 Display();
         }
-            public void Display ()
+        public void DeletingContactINAddressBook(string name)
+        {
+            Contact remove = new Contact();
+            foreach (var contact in persons)
             {
+                if (contact.FirstName.Equals(name))
+                {
+                    remove = contact;
+                }
+            }
+            persons.Remove(remove);
+            Display();
+        }
+        public void Display ()
+        {
             foreach (var Contact in persons)
             {
                 Console.WriteLine("Your name is :{0} ", Contact.FirstName + " " + Contact.LastName);
