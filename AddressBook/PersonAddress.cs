@@ -9,6 +9,7 @@ namespace AddressBook
     public class PersonAddress
     {
         public List<Contact> persons = new List<Contact>();
+        Dictionary<string, List<Contact>> dictionaryName = new Dictionary<string, List<Contact>>();
 
         public void Book()
         {
@@ -136,6 +137,37 @@ namespace AddressBook
                 Console.WriteLine("Your PhoneNumber: {0}", Contact.PhoneNumber);
                 Console.WriteLine("Email: {0}", Contact.Email);
                 Console.WriteLine("-------------------------------------");
+            }
+        }
+        public void AddDictionary(string name)
+        {
+            if (dictionaryName == null)
+            {
+                dictionaryName.Add(name, persons);
+            }
+            if (NameExists(name) == false)
+            {
+                dictionaryName.Add(name, persons);
+            }
+            Console.WriteLine("Addressbook Added sucessfully");
+            AddressBookDisplay();
+        }
+        public bool NameExists(string name)
+        {
+            foreach (var data in dictionaryName.Keys)
+            {
+                if (data.Equals(name))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void AddressBookDisplay()
+        {
+            foreach(var contact in dictionaryName)
+            {
+                Console.WriteLine(contact.Key);
             }
         }
     }
