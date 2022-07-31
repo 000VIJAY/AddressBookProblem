@@ -21,30 +21,35 @@ namespace AddressBook
         }
         public void Addcontact()
         {
-            Console.WriteLine("Enter Firstname");
-            string? FirstName = Console.ReadLine();
-            Console.WriteLine("Enter Last Name");
-            string? LastName = Console.ReadLine();
-            Console.WriteLine("Enter City");
-            string? City = Console.ReadLine();
-            Console.WriteLine("Enter State");
-            string? State = Console.ReadLine();
-            Console.WriteLine("Enter zip Number : only digit is valid");
-            int Zip = (int)Convert.ToInt64(Console.ReadLine());
-            Console.WriteLine("Enter Phone Number");
-            long PhoneNumber = Convert.ToInt64(Console.ReadLine());
-            Console.WriteLine("Enter your email");
-            string? Email = Console.ReadLine();
-            persons.Add(new Contact()
+            Console.WriteLine("How many contacts wants to add , any case do not willing to add new contact press 0");
+            int newCon = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < newCon; i++)
             {
-                FirstName = FirstName,
-                LastName = LastName,
-                City = City,
-                State = State,
-                Zip = Zip,
-                PhoneNumber = PhoneNumber,
-                Email = Email,
-            });
+                Console.WriteLine("Enter Firstname");
+                string? FirstName = Console.ReadLine();
+                Console.WriteLine("Enter Last Name");
+                string? LastName = Console.ReadLine();
+                Console.WriteLine("Enter City");
+                string? City = Console.ReadLine();
+                Console.WriteLine("Enter State");
+                string? State = Console.ReadLine();
+                Console.WriteLine("Enter zip Number : only digit is valid");
+                int Zip = (int)Convert.ToInt64(Console.ReadLine());
+                Console.WriteLine("Enter Phone Number");
+                long PhoneNumber = Convert.ToInt64(Console.ReadLine());
+                Console.WriteLine("Enter your email");
+                string? Email = Console.ReadLine();
+                persons.Add(new Contact()
+                {
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    City = City,
+                    State = State,
+                    Zip = Zip,
+                    PhoneNumber = PhoneNumber,
+                    Email = Email,
+                });
+            }
         }
         public void EditContact()
         {
